@@ -4,6 +4,8 @@ import ChangeThemeContext from './context/ChangeThemeContext'
 import CategoryContext from './context/CategoryContext'
 
 import Login from './components/Login'
+import ProtectedRoute from './components/ProtectedRoute'
+import Home from './components/Home'
 
 import './App.css'
 
@@ -22,6 +24,10 @@ class App extends Component {
     this.setState(prevState => ({isDarkMode: !prevState.isDarkMode}))
   }
 
+  changeCategory = mode => {
+    this.setState({category: mode})
+  }
+
   render() {
     const {isDarkMode, category} = this.state
     return (
@@ -33,6 +39,7 @@ class App extends Component {
         >
           <Switch>
             <Route exact path="/login" component={Login} />
+            <ProtectedRoute exact path="/" component={Home} />
           </Switch>
         </CategoryContext.Provider>
       </ChangeThemeContext.Provider>
