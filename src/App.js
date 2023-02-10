@@ -6,6 +6,8 @@ import CategoryContext from './context/CategoryContext'
 import Login from './components/Login'
 import ProtectedRoute from './components/ProtectedRoute'
 import Home from './components/Home'
+import Trending from './components/Trending'
+import GamePage from './components/GamePage'
 
 import './App.css'
 
@@ -40,6 +42,8 @@ class App extends Component {
           <Switch>
             <Route exact path="/login" component={Login} />
             <ProtectedRoute exact path="/" component={Home} />
+            <ProtectedRoute exact path="/trending" component={Trending} />
+            <ProtectedRoute exact path="/gaming" component={GamePage} />
           </Switch>
         </CategoryContext.Provider>
       </ChangeThemeContext.Provider>

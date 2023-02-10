@@ -124,13 +124,12 @@ class Home extends Component {
 
   renderVideos = () => {
     const {videosList} = this.state
-    const noVideos = []
-    if (noVideos.length === 0) {
+    if (videosList.length === 0) {
       return this.renderNoVideosView()
     }
     return (
       <VideosListItems>
-        {videoList.map(each => (
+        {videosList.map(each => (
           <HomeVideo key={each.id} details={each} />
         ))}
       </VideosListItems>

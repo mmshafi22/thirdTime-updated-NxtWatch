@@ -171,8 +171,9 @@ export const BtnRetry = styled.button`
   letter-spacing: 1px;
   color: #ffffff;
 `
-export const VideosListItems = styled.div`
+export const VideosListItems = styled.ul`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  list-style-type: none;
 `
