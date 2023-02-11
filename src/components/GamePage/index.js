@@ -5,7 +5,7 @@ import Cookies from 'js-cookie'
 import Header from '../Header'
 import Sidebar from '../Sidebar'
 import ChangeThemeContext from '../../context/ChangeThemeContext'
-import CategoryContext from '../../context/CategoryContext'
+import GameCard from '../GameCard'
 
 import {
   GamingMainContainer,
@@ -22,11 +22,6 @@ import {
   GameIcon,
   GameHeaderText,
   GameVideosList,
-  GameThumbnailCard,
-  GameLink,
-  GameThumbnailImg,
-  GameThumbnailHeading,
-  GameThumbnailText,
 } from './styledComponents'
 
 const gameStatusList = {
@@ -83,35 +78,9 @@ class GamePage extends Component {
                 <GameHeaderText isDarkMode={isDarkMode}>Gaming</GameHeaderText>
               </GameHeader>
               <GameVideosList>
-                {gamesList.map(each => {
-                  const {id, title, thumbnailUrl, viewCount} = each
-                  return (
-                    <CategoryContext.Consumer>
-                      {val => {
-                        const {changeCategory} = val
-                        return (
-                          <GameLink
-                            to={`/videos/${id}`}
-                            onClick={() => changeCategory('INITIAL')}
-                          >
-                            <GameThumbnailCard>
-                              <GameThumbnailImg
-                                src={thumbnailUrl}
-                                alt="video thumbnail"
-                              />
-                              <GameThumbnailHeading isDarkMode={isDarkMode}>
-                                {title}
-                              </GameThumbnailHeading>
-                              <GameThumbnailText>
-                                {viewCount} Watching Worldwide
-                              </GameThumbnailText>
-                            </GameThumbnailCard>
-                          </GameLink>
-                        )
-                      }}
-                    </CategoryContext.Consumer>
-                  )
-                })}
+                {gamesList.map(each => (
+                  <GameCard key={each.id} details={each} />
+                ))}
               </GameVideosList>
             </GameVideosContainer>
           )

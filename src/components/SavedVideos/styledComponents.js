@@ -1,11 +1,10 @@
 import styled from 'styled-components'
 
-export const TrendingMainContainer = styled.div`
+export const SavePageMainContainer = styled.div`
   height: 100vh;
   background-color: ${props => (props.isDarkMode ? '#181818' : '#f9f9f9')};
 `
-
-export const TrendingBgContainer = styled.div`
+export const SavePageBgContainer = styled.div`
   @media (min-width: 768px) {
     display: flex;
   }
@@ -13,20 +12,19 @@ export const TrendingBgContainer = styled.div`
   height: 100vh;
   overflow-y: auto;
 `
-
-export const TrendingSidebarContainer = styled.div`
+export const SavePageSidebarContainer = styled.div`
   display: none;
   @media (min-width: 768px) {
     display: block;
   }
   width: 200px;
 `
-export const TrendingVideosContainer = styled.div`
+export const SavePageVideosContainer = styled.div`
   width: 100%;
   height: 100vh;
   overflow-y: auto;
 `
-export const TrendingHeader = styled.div`
+export const SavePageHeader = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -38,14 +36,14 @@ export const TrendingHeader = styled.div`
   background-color: ${props => (props.isDarkMode ? '#424242' : '#ebebeb')};
 `
 
-export const TrendHeaderText = styled.h1`
+export const SavePageText = styled.h1`
   font-family: Roboto;
   font-size: 30px;
   font-weight: bold;
   color: ${props => (props.isDarkMode ? 'white' : '#1e293b')};
   padding-left: 20px;
 `
-export const TrendingIcon = styled.div`
+export const SavePageIcon = styled.div`
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -54,15 +52,14 @@ export const TrendingIcon = styled.div`
   align-items: center;
   background-color: ${props => (props.isDarkMode ? '#0f0f0f' : '#e2e8f0')};
 `
-export const TrendLoaderContainer = styled.div`
-  width: 100%;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+export const SavePageHeaderText = styled.h1`
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: bold;
+  color: ${props => (props.isDarkMode ? 'white' : '#1e293b')};
+  padding-left: 20px;
 `
-export const TrendFailureViewContainer = styled.div`
+export const SavePageFailureViewContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,12 +68,12 @@ export const TrendFailureViewContainer = styled.div`
   height: 80vh;
   padding: 10px;
 `
-export const TrendFailureImg = styled.img`
+export const SavePageFailureImg = styled.img`
   width: 100%;
-  max-width: 300px;
+  max-width: 40%;
   margin: 20px;
 `
-export const TrendFailureHeading = styled.h1`
+export const SavePageFailureHeading = styled.h1`
   font-family: Roboto;
   font-size: 20px;
   font-weight: bold;
@@ -85,7 +82,7 @@ export const TrendFailureHeading = styled.h1`
   margin: 0px;
   padding-bottom: 20px;
 `
-export const TrendFailureText = styled.p`
+export const SavePageFailureText = styled.p`
   font-family: Roboto;
   font-size: 15px;
   font-weight: bold;
@@ -94,21 +91,7 @@ export const TrendFailureText = styled.p`
   margin: 0px;
   padding-bottom: 20px;
 `
-export const TrendBtnRetry = styled.button`
-  background-color: #4f46e5;
-  border: 0;
-  outline: none;
-  cursor: pointer;
-  width: 100px;
-  height: 35px;
-  border-radius: 6px;
-  font-family: Roboto;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  color: #ffffff;
-`
-export const TrendingVideos = styled.ul`
+export const SavePageVideoList = styled.ul`
   list-style-type: none;
   padding-left: 0px;
   width: 100%;

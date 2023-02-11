@@ -175,5 +175,6 @@ export const VideosListItems = styled.ul`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  padding-left: 0px;
   list-style-type: none;
 `

@@ -1,12 +1,11 @@
 import {Component} from 'react'
-import {formatDistanceToNow} from 'date-fns'
 import {AiFillFire} from 'react-icons/ai'
 import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
 import Header from '../Header'
 import Sidebar from '../Sidebar'
 import ChangeThemeContext from '../../context/ChangeThemeContext'
-import CategoryContext from '../../context/CategoryContext'
+import TrendingCard from '../TrendingCard'
 
 import {
   TrendingMainContainer,
@@ -22,14 +21,7 @@ import {
   TrendFailureText,
   TrendBtnRetry,
   TrendingVideos,
-  TrendingVideoItem,
-  TrendingVideoThumbnailImg,
-  TrendThumbnailTitle,
-  TrendThumbnailName,
-  TrendThumbnailViewsAndTime,
-  TrendingLink,
   TrendHeaderText,
-  TrendingTextContainer,
 } from './styledComponents'
 
 const statusList = {
@@ -122,60 +114,9 @@ class Trending extends Component {
                 </TrendHeaderText>
               </TrendingHeader>
               <TrendingVideos>
-                {trendingList.map(each => {
-                  const {
-                    id,
-                    channel,
-                    publishedAt,
-                    thumbnailUrl,
-                    title,
-                    viewCount,
-                  } = each
-                  const {name} = channel
-                  let TrendPostedTime = formatDistanceToNow(
-                    new Date(publishedAt),
-                  )
-
-                  const TrendPostedAt = TrendPostedTime.split(' ')
-
-                  if (TrendPostedAt.length === 3) {
-                    TrendPostedAt.shift()
-                    TrendPostedTime = TrendPostedAt.join(' ')
-                  }
-                  return (
-                    <CategoryContext.Consumer>
-                      {val => {
-                        const {changeCategory} = val
-                        return (
-                          <TrendingLink
-                            to={`/videos/${id}`}
-                            onClick={() => changeCategory('INITIAL')}
-                          >
-                            <TrendingVideoItem key={id}>
-                              <TrendingVideoThumbnailImg
-                                src={thumbnailUrl}
-                                alt="video thumbnail"
-                              />
-                              <TrendingTextContainer>
-                                <TrendThumbnailTitle isDarkMode={isDarkMode}>
-                                  {title}
-                                </TrendThumbnailTitle>
-                                <TrendThumbnailName isDarkMode={isDarkMode}>
-                                  {name}
-                                </TrendThumbnailName>
-                                <TrendThumbnailViewsAndTime
-                                  isDarkMode={isDarkMode}
-                                >
-                                  {viewCount} views . {TrendPostedAt} ago
-                                </TrendThumbnailViewsAndTime>
-                              </TrendingTextContainer>
-                            </TrendingVideoItem>
-                          </TrendingLink>
-                        )
-                      }}
-                    </CategoryContext.Consumer>
-                  )
-                })}
+                {trendingList.map(each => (
+                  <TrendingCard key={each.id} details={each} />
+                ))}
               </TrendingVideos>
             </TrendingVideosContainer>
           )
