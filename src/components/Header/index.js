@@ -32,18 +32,7 @@ import {
 } from './styledComponents'
 
 class Header extends Component {
-  state = {openMenu: false}
-
-  onOpenMenu = () => {
-    this.setState({openMenu: true})
-  }
-
-  onCloseMenu = () => {
-    this.setState({openMenu: false})
-  }
-
   render() {
-    const {openMenu} = this.state
     const contentStyles = {
       height: '200px',
       width: '70%',
@@ -80,19 +69,39 @@ class Header extends Component {
                     }}
                   </CategoryContext.Consumer>
                   <IconsContainer>
-                    <BtnIcon type="button" onClick={() => changeTheme()}>
+                    <BtnIcon
+                      type="button"
+                      onClick={() => changeTheme()}
+                      data-testid="theme"
+                    >
                       {isDarkMode ? (
                         <FiSun color="white" size={22} />
                       ) : (
                         <FaMoon size={22} />
                       )}
                     </BtnIcon>
-                    <BtnIcon type="button" onClick={this.onOpenMenu}>
-                      <GiHamburgerMenu
-                        size={22}
-                        color={isDarkMode ? 'white' : 'black'}
-                      />
-                    </BtnIcon>
+                    <Popup
+                      modal
+                      trigger={
+                        <BtnIcon type="button">
+                          <GiHamburgerMenu
+                            size={22}
+                            color={isDarkMode ? 'White' : 'black'}
+                          />
+                        </BtnIcon>
+                      }
+                    >
+                      {close => (
+                        <MobilePopup isDarkMode={isDarkMode}>
+                          <CloseBtn type="button" onClick={() => close()}>
+                            <IoMdClose color={isDarkMode ? 'white' : 'black'} />
+                          </CloseBtn>
+                          <MobileList>
+                            <CategoryList />
+                          </MobileList>
+                        </MobilePopup>
+                      )}
+                    </Popup>
                     <Popup
                       modal
                       trigger={
@@ -127,16 +136,6 @@ class Header extends Component {
                     </Popup>
                   </IconsContainer>
                 </NavbarSmallContainer>
-                {openMenu && (
-                  <MobilePopup isDarkMode={isDarkMode}>
-                    <CloseBtn type="button" onClick={this.onCloseMenu}>
-                      <IoMdClose color={isDarkMode ? 'white' : 'black'} />
-                    </CloseBtn>
-                    <MobileList>
-                      <CategoryList />
-                    </MobileList>
-                  </MobilePopup>
-                )}
               </NavSmallBgContainer>
               <NavbarLargeBgContainer isDarkMode={isDarkMode}>
                 <CategoryContext.Consumer>
@@ -154,7 +153,11 @@ class Header extends Component {
                   }}
                 </CategoryContext.Consumer>
                 <IconsLargeContainer>
-                  <BtnIcon type="button" onClick={() => changeTheme()}>
+                  <BtnIcon
+                    type="button"
+                    onClick={() => changeTheme()}
+                    data-testid="theme"
+                  >
                     {isDarkMode ? (
                       <FiSun color="white" size={22} />
                     ) : (

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const VideoItemMainContainer = styled.div`
   height: 100%;
-  background-color: ${props => (props.isDarkMode ? '#181818' : '#f9f9f9')};
+  background-color: ${props => (props.isDarkMode ? '#0f0f0f' : '#f9f9f9')};
 `
 
 export const VideoItemBgContainer = styled.div`

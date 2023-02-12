@@ -156,7 +156,7 @@ class GamePage extends Component {
         {value => {
           const {isDarkMode} = value
           return (
-            <GamingMainContainer isDarkMode={isDarkMode}>
+            <GamingMainContainer isDarkMode={isDarkMode} data-testid="gaming">
               <Header />
               <GamingBgContainer>
                 <GamingSidebarContainer>

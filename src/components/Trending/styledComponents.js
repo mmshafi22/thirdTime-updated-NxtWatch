@@ -2,9 +2,8 @@ import styled from 'styled-components'
 
 export const TrendingMainContainer = styled.div`
   height: 100vh;
-  background-color: ${props => (props.isDarkMode ? '#181818' : '#f9f9f9')};
+  background-color: ${props => (props.isDarkMode ? '#0f0f0f' : '#f9f9f9')};
 `
-
 export const TrendingBgContainer = styled.div`
   @media (min-width: 768px) {
     display: flex;

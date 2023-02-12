@@ -96,7 +96,10 @@ class SavedVideos extends Component {
         {value => {
           const {isDarkMode} = value
           return (
-            <SavePageMainContainer isDarkMode={isDarkMode}>
+            <SavePageMainContainer
+              isDarkMode={isDarkMode}
+              data-testid="savedVideos"
+            >
               <Header />
               <SavePageBgContainer>
                 <SavePageSidebarContainer>

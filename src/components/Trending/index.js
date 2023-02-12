@@ -166,7 +166,10 @@ class Trending extends Component {
         {value => {
           const {isDarkMode} = value
           return (
-            <TrendingMainContainer isDarkMode={isDarkMode}>
+            <TrendingMainContainer
+              isDarkMode={isDarkMode}
+              data-testid="trending"
+            >
               <Header />
               <TrendingBgContainer>
                 <TrendingSidebarContainer>

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const GamingMainContainer = styled.div`
   height: 100vh;
-  background-color: ${props => (props.isDarkMode ? '#181818' : '#f9f9f9')};
+  background-color: ${props => (props.isDarkMode ? '#0f0f0f' : '#f9f9f9')};
 `
 
 export const GamingBgContainer = styled.div`
@@ -13,7 +13,6 @@ export const GamingBgContainer = styled.div`
   height: 100vh;
   overflow-y: auto;
 `
-
 export const GamingSidebarContainer = styled.div`
   display: none;
   @media (min-width: 768px) {

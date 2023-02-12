@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const SavePageMainContainer = styled.div`
   height: 100vh;
-  background-color: ${props => (props.isDarkMode ? '#181818' : '#f9f9f9')};
+  background-color: ${props => (props.isDarkMode ? '#0f0f0f' : '#f9f9f9')};
 `
 export const SavePageBgContainer = styled.div`
   @media (min-width: 768px) {

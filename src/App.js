@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Redirect, Route} from 'react-router-dom'
 
 import ChangeThemeContext from './context/ChangeThemeContext'
 import CategoryContext from './context/CategoryContext'
@@ -12,6 +12,7 @@ import Trending from './components/Trending'
 import GamePage from './components/GamePage'
 import VideoItemDetails from './components/VideoItemDetails'
 import SavedVideos from './components/SavedVideos'
+import NotFound from './components/NotFound'
 
 import './App.css'
 
@@ -102,6 +103,8 @@ class App extends Component {
                 path="/saved-videos"
                 component={SavedVideos}
               />
+              <Route path="/not-found" component={NotFound} />
+              <Redirect to="not-found" />
             </Switch>
           </CategoryContext.Provider>
         </SaveVideosContext.Provider>

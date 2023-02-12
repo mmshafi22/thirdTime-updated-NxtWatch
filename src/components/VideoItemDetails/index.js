@@ -148,15 +148,15 @@ class VideoItemDetails extends Component {
                 </ViewAndTime>
                 <DetailLikeAndDislike>
                   <IconBtn type="button" onClick={this.likeTheVideo}>
-                    <BiLike color={like ? '#3b82f6' : '#616e7c'} size={20} />
-                    <BtnText color={like ? '#3b82f6' : '#616e7c'}>Like</BtnText>
+                    <BiLike color={like ? '#2563eb' : '#64748b'} size={20} />
+                    <BtnText color={like ? '#2563eb' : '#64748b'}>Like</BtnText>
                   </IconBtn>
                   <IconBtn type="button" onClick={this.dislikeTheVideo}>
                     <BiDislike
-                      color={dislike ? '#3b82f6' : '#616e7c'}
+                      color={dislike ? '#2563eb' : '#64748b'}
                       size={20}
                     />
-                    <BtnText color={dislike ? '#3b82f6' : '#616e7c'}>
+                    <BtnText color={dislike ? '#2563eb' : '#64748b'}>
                       Dislike
                     </BtnText>
                   </IconBtn>
@@ -175,12 +175,12 @@ class VideoItemDetails extends Component {
                           <RiMenuAddLine
                             size={20}
                             color={
-                              isPresent !== undefined ? '#3b82f6' : '#616e7c'
+                              isPresent !== undefined ? '#2563eb' : '#64748b'
                             }
                           />
                           <BtnSaveText
                             color={
-                              isPresent !== undefined ? '#3b82f6' : '#616e7c'
+                              isPresent !== undefined ? '#2563eb' : '#64748b'
                             }
                           >
                             {text}
@@ -281,7 +281,10 @@ class VideoItemDetails extends Component {
         {value => {
           const {isDarkMode} = value
           return (
-            <VideoItemMainContainer isDarkMode={isDarkMode}>
+            <VideoItemMainContainer
+              isDarkMode={isDarkMode}
+              data-testid="videoItemDetails"
+            >
               <Header />
               <VideoItemBgContainer>
                 <VideoItemSidebarContainer>

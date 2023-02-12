@@ -137,8 +137,8 @@ class Home extends Component {
   }
 
   adPage = () => (
-    <PrimeAd>
-      <CloseBtn type="button" onClick={this.removeAd}>
+    <PrimeAd data-testid="banner">
+      <CloseBtn type="button" onClick={this.removeAd} data-testid="close">
         <IoMdClose size={25} />
       </CloseBtn>
       <PrimeLogo
@@ -215,7 +215,7 @@ class Home extends Component {
         {value => {
           const {isDarkMode} = value
           return (
-            <HomeMainContainer isDarkMode={isDarkMode}>
+            <HomeMainContainer isDarkMode={isDarkMode} data-testid="home">
               <Header />
               <HomeBgContainer>
                 <SideContainer>
@@ -235,6 +235,7 @@ class Home extends Component {
                       <SearchBtn
                         type="button"
                         isDarkMode={isDarkMode}
+                        data-testid="searchButton"
                         onClick={this.onClickSearchBtn}
                       >
                         <BsSearch
