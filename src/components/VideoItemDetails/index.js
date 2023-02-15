@@ -243,11 +243,11 @@ class VideoItemDetails extends Component {
           <DetailFailureViewContainer>
             <DetailFailureImg src={detailFailImg} alt="failure view" />
             <DetailFailureHeading isDarkMode={isDarkMode}>
-              Oops? Something Went Wrong
+              Oops! Something Went Wrong
             </DetailFailureHeading>
             <DetailFailureText isDarkMode={isDarkMode}>
               We are having some trouble to complete your request. Please try
-              again
+              again.
             </DetailFailureText>
             <DetailBtnRetry
               type="button"

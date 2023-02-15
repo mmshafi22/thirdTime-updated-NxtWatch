@@ -23,7 +23,7 @@ export const SavePageVideoThumbnailImg = styled.img`
   }
 `
 
-export const SavePageThumbnailTitle = styled.h1`
+export const SavePageThumbnailTitle = styled.p`
   font-family: Roboto;
   font-size: 20px;
   font-weight: bold;

@@ -117,7 +117,7 @@ class Header extends Component {
                       {close => (
                         <LogoutPopup isDarkMode={isDarkMode}>
                           <Question isDarkMode={isDarkMode}>
-                            Are you sure you want to logout?
+                            Are you sure, you want to logout
                           </Question>
                           <div>
                             <Button
@@ -180,7 +180,7 @@ class Header extends Component {
                     {close => (
                       <LogoutPopup isDarkMode={isDarkMode}>
                         <Question isDarkMode={isDarkMode}>
-                          Are you sure you want to logout?
+                          Are you sure, you want to logout
                         </Question>
                         <div>
                           <Button type="button" onClick={() => close()} outline>

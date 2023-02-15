@@ -51,7 +51,10 @@ const HomeVideo = props => {
                       {name}
                     </ThumbnailName>
                     <ThumbnailViewsAndTime>
-                      {viewCount} views . {postedAt} ago
+                      {viewCount} views
+                    </ThumbnailViewsAndTime>
+                    <ThumbnailViewsAndTime>
+                      {postedAt} ago
                     </ThumbnailViewsAndTime>
                   </div>
                 </ThumbnailDetails>

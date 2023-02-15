@@ -100,11 +100,11 @@ class GamePage extends Component {
           <GameFailureViewContainer>
             <GameFailureImg src={GameFailImg} alt="failure view" />
             <GameFailureHeading isDarkMode={isDarkMode}>
-              Oops? Something Went Wrong
+              Oops! Something Went Wrong
             </GameFailureHeading>
             <GameFailureText isDarkMode={isDarkMode}>
               We are having some trouble to complete your request. Please try
-              again
+              again.
             </GameFailureText>
             <GameBtnRetry type="button" onClick={() => this.getGameVideos()}>
               Retry

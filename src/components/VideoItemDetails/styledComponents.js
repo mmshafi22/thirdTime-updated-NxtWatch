@@ -88,7 +88,7 @@ export const DetailPlayerContainer = styled.div`
     height: 70%;
   }
 `
-export const DetailVideoHeading = styled.h1`
+export const DetailVideoHeading = styled.p`
   font-family: Roboto;
   font-size: 25px;
   font-weight: bold;
@@ -152,7 +152,7 @@ export const ProfileVideoItemImg = styled.img`
   border-radius: 50%;
   margin-right: 15px;
 `
-export const ChannelTextHeading = styled.h1`
+export const ChannelTextHeading = styled.p`
   font-family: Roboto;
   font-size: 20px;
   color: ${props => (props.isDarkMode ? '#ffffff' : '#1e293b')};

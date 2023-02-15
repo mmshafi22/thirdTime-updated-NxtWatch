@@ -32,7 +32,7 @@ class SavedVideos extends Component {
           'https://assets.ccbp.in/frontend/react-js/nxt-watch-no-saved-videos-img.png'
         return (
           <SavePageFailureViewContainer>
-            <SavePageFailureImg src={savePageFailImg} alt="failure view" />
+            <SavePageFailureImg src={savePageFailImg} alt="no saved videos" />
             <SavePageFailureHeading isDarkMode={isDarkMode}>
               No saved videos found
             </SavePageFailureHeading>

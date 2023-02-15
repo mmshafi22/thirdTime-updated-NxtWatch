@@ -1,5 +1,5 @@
 import {formatDistanceToNow} from 'date-fns'
-
+import {Link} from 'react-router-dom'
 import ChangeThemeContext from '../../context/ChangeThemeContext'
 
 import {
@@ -13,7 +13,7 @@ import {
 
 const SaveCard = props => {
   const {details} = props
-  const {publishedAt, channel, thumbnailUrl, title, viewCount} = details
+  const {publishedAt, id, channel, thumbnailUrl, title, viewCount} = details
   const {name} = channel
   let savePagePostedTime = formatDistanceToNow(new Date(publishedAt))
 
@@ -28,23 +28,28 @@ const SaveCard = props => {
       {value => {
         const {isDarkMode} = value
         return (
-          <SavePageVideoItem>
-            <SavePageVideoThumbnailImg
-              src={thumbnailUrl}
-              alt="video thumbnail"
-            />
-            <SavePageTextContainer>
-              <SavePageThumbnailTitle isDarkMode={isDarkMode}>
-                {title}
-              </SavePageThumbnailTitle>
-              <SavePageThumbnailName isDarkMode={isDarkMode}>
-                {name}
-              </SavePageThumbnailName>
-              <SavePageThumbnailViewsAndTime isDarkMode={isDarkMode}>
-                {viewCount} views . {savePagePostedAt} ago
-              </SavePageThumbnailViewsAndTime>
-            </SavePageTextContainer>
-          </SavePageVideoItem>
+          <Link to={`/videos/${id}`}>
+            <SavePageVideoItem>
+              <SavePageVideoThumbnailImg
+                src={thumbnailUrl}
+                alt="video thumbnail"
+              />
+              <SavePageTextContainer>
+                <SavePageThumbnailTitle isDarkMode={isDarkMode}>
+                  {title}
+                </SavePageThumbnailTitle>
+                <SavePageThumbnailName isDarkMode={isDarkMode}>
+                  {name}
+                </SavePageThumbnailName>
+                <SavePageThumbnailViewsAndTime isDarkMode={isDarkMode}>
+                  {viewCount} views
+                </SavePageThumbnailViewsAndTime>
+                <SavePageThumbnailViewsAndTime>
+                  {savePagePostedAt} ago
+                </SavePageThumbnailViewsAndTime>
+              </SavePageTextContainer>
+            </SavePageVideoItem>
+          </Link>
         )
       }}
     </ChangeThemeContext.Consumer>

@@ -14,7 +14,7 @@ export const GameThumbnailImg = styled.img`
   }
   padding-bottom: 10px;
 `
-export const GameThumbnailHeading = styled.h1`
+export const GameThumbnailHeading = styled.p`
   font-family: Roboto;
   font-size: 15px;
   font-weight: bold;

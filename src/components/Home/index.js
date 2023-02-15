@@ -165,7 +165,7 @@ class Home extends Component {
             </FailureHeading>
             <FailureText isDarkMode={isDarkMode}>
               We are having some trouble to complete your request. Please try
-              again
+              again.
             </FailureText>
             <BtnRetry type="button" onClick={() => this.getAllVideos()}>
               Retry

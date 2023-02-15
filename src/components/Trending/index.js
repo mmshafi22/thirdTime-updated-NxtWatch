@@ -79,11 +79,11 @@ class Trending extends Component {
           <TrendFailureViewContainer>
             <TrendFailureImg src={TrendFailImg} alt="failure view" />
             <TrendFailureHeading isDarkMode={isDarkMode}>
-              Oops? Something Went Wrong
+              Oops! Something Went Wrong
             </TrendFailureHeading>
             <TrendFailureText isDarkMode={isDarkMode}>
               We are having some trouble to complete your request. Please try
-              again
+              again.
             </TrendFailureText>
             <TrendBtnRetry
               type="button"

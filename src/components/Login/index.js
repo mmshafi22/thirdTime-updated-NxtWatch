@@ -46,35 +46,18 @@ class Login extends Component {
   onSubmitForm = async event => {
     event.preventDefault()
     const {username, password} = this.state
-    if (username === '' && password !== '') {
-      this.setState({
-        showError: true,
-        errorMsg: 'Enter The Username',
-      })
-    } else if (password === '' && username !== '') {
-      this.setState({
-        showError: true,
-        errorMsg: 'Enter The Password',
-      })
-    } else if (password === '' && username === '') {
-      this.setState({
-        showError: true,
-        errorMsg: 'Enter Username and Password',
-      })
+    const userDetails = {username, password}
+    const url = 'https://apis.ccbp.in/login'
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(userDetails),
+    }
+    const response = await fetch(url, options)
+    const data = await response.json()
+    if (response.ok === true) {
+      this.submitSuccess(data.jwt_token)
     } else {
-      const userDetails = {username, password}
-      const url = 'https://apis.ccbp.in/login'
-      const options = {
-        method: 'POST',
-        body: JSON.stringify(userDetails),
-      }
-      const response = await fetch(url, options)
-      const data = await response.json()
-      if (response.ok === true) {
-        this.submitSuccess(data.jwt_token)
-      } else {
-        this.submitFailure(data.error_msg)
-      }
+      this.submitFailure(data.error_msg)
     }
   }
 
@@ -138,8 +121,12 @@ class Login extends Component {
                   />
                 </InputContainer>
                 <CheckBoxInputContainer>
-                  <CheckBox type="checkbox" onChange={this.onCheckTheBox} />
-                  <CheckBoxLabel isDarkMode={isDarkMode}>
+                  <CheckBox
+                    type="checkbox"
+                    onChange={this.onCheckTheBox}
+                    id="checkbox"
+                  />
+                  <CheckBoxLabel isDarkMode={isDarkMode} htmlFor="checkbox">
                     Show Password
                   </CheckBoxLabel>
                 </CheckBoxInputContainer>

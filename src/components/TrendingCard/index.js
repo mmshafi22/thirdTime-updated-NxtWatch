@@ -49,7 +49,10 @@ const TrendingCard = props => {
                     {name}
                   </TrendThumbnailName>
                   <TrendThumbnailViewsAndTime isDarkMode={isDarkMode}>
-                    {viewCount} views . {trendPostedAt} ago
+                    {viewCount} views
+                  </TrendThumbnailViewsAndTime>
+                  <TrendThumbnailViewsAndTime>
+                    {trendPostedAt} ago
                   </TrendThumbnailViewsAndTime>
                 </TrendingTextContainer>
               </TrendingVideoItem>

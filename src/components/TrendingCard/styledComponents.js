@@ -26,7 +26,7 @@ export const TrendingVideoThumbnailImg = styled.img`
 export const TrendingLink = styled(Link)`
   text-decoration: none;
 `
-export const TrendThumbnailTitle = styled.h1`
+export const TrendThumbnailTitle = styled.p`
   font-family: Roboto;
   font-size: 20px;
   font-weight: bold;

@@ -10,7 +10,7 @@ export const SidebarContainer = styled.div`
   padding-top: 20px;
   padding-bottom: 10px;
 `
-export const ContactHeading = styled.h1`
+export const ContactHeading = styled.p`
   font-family: Roboto;
   font-size: 20px;
   font-weight: bold;

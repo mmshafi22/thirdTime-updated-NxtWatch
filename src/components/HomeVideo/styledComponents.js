@@ -28,7 +28,7 @@ export const ProfileImg = styled.img`
   border-radius: 50%;
   margin-right: 10px;
 `
-export const ThumbnailTitle = styled.h1`
+export const ThumbnailTitle = styled.p`
   font-family: Roboto;
   font-size: 15px;
   font-weight: 400;
