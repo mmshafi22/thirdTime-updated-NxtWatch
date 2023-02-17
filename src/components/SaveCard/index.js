@@ -1,5 +1,4 @@
 import {formatDistanceToNow} from 'date-fns'
-import {Link} from 'react-router-dom'
 import ChangeThemeContext from '../../context/ChangeThemeContext'
 
 import {
@@ -9,6 +8,7 @@ import {
   SavePageThumbnailName,
   SavePageThumbnailViewsAndTime,
   SavePageTextContainer,
+  SavePageLink,
 } from './styledComponents'
 
 const SaveCard = props => {
@@ -28,8 +28,8 @@ const SaveCard = props => {
       {value => {
         const {isDarkMode} = value
         return (
-          <Link to={`/videos/${id}`}>
-            <SavePageVideoItem>
+          <SavePageVideoItem>
+            <SavePageLink to={`/videos/${id}`}>
               <SavePageVideoThumbnailImg
                 src={thumbnailUrl}
                 alt="video thumbnail"
@@ -44,12 +44,12 @@ const SaveCard = props => {
                 <SavePageThumbnailViewsAndTime isDarkMode={isDarkMode}>
                   {viewCount} views
                 </SavePageThumbnailViewsAndTime>
-                <SavePageThumbnailViewsAndTime>
+                <SavePageThumbnailViewsAndTime isDarkMode={isDarkMode}>
                   {savePagePostedAt} ago
                 </SavePageThumbnailViewsAndTime>
               </SavePageTextContainer>
-            </SavePageVideoItem>
-          </Link>
+            </SavePageLink>
+          </SavePageVideoItem>
         )
       }}
     </ChangeThemeContext.Consumer>

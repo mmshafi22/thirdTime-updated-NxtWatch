@@ -1,14 +1,19 @@
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
 
-export const SavePageVideoItem = styled.li`
+export const SavePageLink = styled(Link)`
   width: 100%;
-  max-width: 1000px;
   display: flex;
   flex-direction: column;
   @media (min-width: 700px) {
     flex-direction: row;
   }
+  text-decoration: none;
+`
+
+export const SavePageVideoItem = styled.li`
   margin-bottom: 15px;
+  max-width: 1000px;
 `
 
 export const SavePageVideoThumbnailImg = styled.img`

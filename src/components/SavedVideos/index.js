@@ -62,7 +62,6 @@ class SavedVideos extends Component {
             <SaveVideosContext.Consumer>
               {val => {
                 const {savedVideosList} = val
-                console.log(savedVideosList)
                 return (
                   <SavePageVideoList>
                     {savedVideosList.map(each => (

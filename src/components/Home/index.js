@@ -161,7 +161,7 @@ class Home extends Component {
           <FailureViewContainer>
             <FailureImg src={failImg} alt="failure view" />
             <FailureHeading isDarkMode={isDarkMode}>
-              Oops? Something Went Wrong
+              Oops! Something Went Wrong
             </FailureHeading>
             <FailureText isDarkMode={isDarkMode}>
               We are having some trouble to complete your request. Please try
