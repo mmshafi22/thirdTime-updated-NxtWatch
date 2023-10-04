@@ -36,7 +36,7 @@ const TrendingCard = props => {
               to={`/videos/${id}`}
               onClick={() => changeCategory('INITIAL')}
             >
-              <TrendingVideoItem>
+              <TrendingVideoItem isDarkMode={isDarkMode}>
                 <TrendingVideoThumbnailImg
                   src={thumbnailUrl}
                   alt="video thumbnail"

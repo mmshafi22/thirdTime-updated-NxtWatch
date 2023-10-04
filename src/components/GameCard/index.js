@@ -24,7 +24,7 @@ const GameCard = props => {
               to={`/videos/${id}`}
               onClick={() => changeCategory('INITIAL')}
             >
-              <GameThumbnailCard key={id}>
+              <GameThumbnailCard key={id} isDarkMode={isDarkMode}>
                 <GameThumbnailImg src={thumbnailUrl} alt="video thumbnail" />
                 <GameThumbnailHeading isDarkMode={isDarkMode}>
                   {title}

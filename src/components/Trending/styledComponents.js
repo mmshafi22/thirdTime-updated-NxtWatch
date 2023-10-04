@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const TrendingMainContainer = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   background-color: ${props => (props.isDarkMode ? '#0f0f0f' : '#f9f9f9')};
 `
 export const TrendingBgContainer = styled.div`
@@ -15,7 +15,7 @@ export const TrendingBgContainer = styled.div`
 
 export const TrendingSidebarContainer = styled.div`
   display: none;
-  @media (min-width: 768px) {
+  @media (min-width: 900px) {
     display: block;
   }
   width: 200px;

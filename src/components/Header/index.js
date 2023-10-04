@@ -94,7 +94,10 @@ class Header extends Component {
                       {close => (
                         <MobilePopup isDarkMode={isDarkMode}>
                           <CloseBtn type="button" onClick={() => close()}>
-                            <IoMdClose color={isDarkMode ? 'white' : 'black'} />
+                            <IoMdClose
+                              color={isDarkMode ? 'white' : 'black'}
+                              size={30}
+                            />
                           </CloseBtn>
                           <MobileList>
                             <CategoryList />

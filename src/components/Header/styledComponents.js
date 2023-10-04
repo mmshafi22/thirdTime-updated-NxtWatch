@@ -1,18 +1,24 @@
 import styled from 'styled-components'
 
 export const NavLogo = styled.img`
-  width: 30%;
+  width: 100px;
+  @media (min-width: 900px) {
+    width: 150px;
+  }
 `
 export const NavSmallBgContainer = styled.nav`
   background-color: ${props => (props.isDarkMode ? '#212121' : '#f4f4f4')};
   width: 100%;
-  @media (min-width: 768px) {
+  position: sticky;
+  box-shadow: 0px 0px 14px 1px
+    ${props => (props.isDarkMode ? '#fefefe' : '#0f0f0f')};
+  @media (min-width: 900px) {
     display: none;
   }
 `
 
 export const IconsLargeContainer = styled.div`
-  width: 20%;
+  width: 300px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,14 +41,19 @@ export const NavbarLargeBgContainer = styled.nav`
   align-items: center;
   padding: 20px;
   height: 80px;
+  position: sticky;
+  box-shadow: 0px 0px 14px 1px
+    ${props => (props.isDarkMode ? '#fefefe' : '#0f0f0f')};
   background-color: ${props => (props.isDarkMode ? '#212121' : '#f4f4f4')};
-  @media (max-width: 767px) {
+  @media (max-width: 899px) {
     display: none;
   }
 `
 
 export const IconsContainer = styled.div`
+  width: 200px;
   display: flex;
+  justify-content: space-around;
   align-items: center;
 `
 export const BtnIcon = styled.button`
@@ -61,9 +72,12 @@ export const MobilePopup = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   background-color: black;
-  width: 100vw;
+  width: 90vw;
   padding: 10px;
   margin: auto;
+  box-shadow: 0px 0px 14px 1px
+    ${props => (props.isDarkMode ? '#fefefe' : '#0f0f0f')};
+  border-radius: 10px;
   background-color: ${props => (props.isDarkMode ? '#0f0f0f' : '#f9f9f9')};
 `
 
@@ -80,7 +94,7 @@ export const CloseBtn = styled(BtnIcon)`
   margin-right: 10px;
 `
 export const LogoutPopup = styled.div`
-  background-color: ${props => (props.isDarkMode ? '#0f0f0f' : '#f9f9f9')};
+  background-color: ${props => (props.isDarkMode ? '#f9f9f9' : '#0f0f0f')};
   border-radius: 8px;
   width: 100%;
   height: 100%;
@@ -111,7 +125,7 @@ export const Question = styled.p`
   font-family: Roboto;
   font-size: 15px;
   font-weight: bold;
-  color: ${props => (props.isDarkMode ? '#f9f9f9' : '#0f0f0f')};
+  color: ${props => (props.isDarkMode ? '#0f0f0f' : '#f9f9f9')};
 `
 export const Button = styled.button`
   background-color: ${props => (props.outline ? 'transparent' : '#3b82f6')};

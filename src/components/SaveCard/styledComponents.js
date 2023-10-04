@@ -14,6 +14,13 @@ export const SavePageLink = styled(Link)`
 export const SavePageVideoItem = styled.li`
   margin-bottom: 15px;
   max-width: 1000px;
+  transition: 0.5s;
+  :hover {
+    box-shadow: 0px 0px 14px 2px
+      ${props => (props.isDarkMode ? '#fefefe' : '#0f0f0f')};
+    transform: scaleX(1);
+    border-radius: 5px;
+  }
 `
 
 export const SavePageVideoThumbnailImg = styled.img`

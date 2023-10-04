@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const HomeMainContainer = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   background-color: ${props => (props.isDarkMode ? '#181818' : '#f9f9f9')};
 `
 
@@ -22,7 +22,7 @@ export const HomeVideosContainer = styled.div`
 
 export const SideContainer = styled.div`
   display: none;
-  @media (min-width: 768px) {
+  @media (min-width: 900px) {
     display: block;
   }
   width: 200px;

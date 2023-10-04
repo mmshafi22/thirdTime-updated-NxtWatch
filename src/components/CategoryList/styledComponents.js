@@ -20,6 +20,7 @@ export const CategoryItem = styled.li`
   padding-left: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
+  margin: 5px;
   max-width: 200px;
   text-decoration: none;
   background-color: ${props => {
@@ -27,8 +28,13 @@ export const CategoryItem = styled.li`
     const color = isDarkMode ? '#424242' : '#e2e8f0'
     return props.isActive ? color : ''
   }};
+  :hover {
+    border-top: 1px solid
+      ${props => (props.isDarkMode === false ? '#424242' : '#e2e8f0')};
+    border-bottom: 1px solid
+      ${props => (props.isDarkMode === false ? '#424242' : '#e2e8f0')};
+  }
 `
-
 export const CategoryText = styled.p`
   font-family: Roboto;
   font-size: 16px;
@@ -36,4 +42,12 @@ export const CategoryText = styled.p`
   text-decoration: none;
   padding-left: 15px;
   color: ${props => (props.isDarkMode ? '#f9f9f9' : '#0f0f0f')};
+`
+export const SpanText = styled.span`
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #0388fc;
+  padding: 2px;
+  border-radius: 5px;
 `

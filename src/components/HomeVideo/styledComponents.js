@@ -3,11 +3,18 @@ import styled from 'styled-components'
 
 export const HomeItem = styled.li`
   width: 100%;
-  @media (min-width: 600px) {
-    width: 180px;
+  @media (min-width: 900px) {
+    width: 18%;
     margin-right: 15px;
   }
   margin-bottom: 15px;
+  transition: 0.5s;
+  :hover {
+    box-shadow: 0px 0px 14px 2px
+      ${props => (props.isDarkMode ? '#fefefe' : '#0f0f0f')};
+    transform: scaleX(1);
+    border-radius: 5px;
+  }
 `
 export const HomeNavigate = styled(Link)`
   text-decoration: none;

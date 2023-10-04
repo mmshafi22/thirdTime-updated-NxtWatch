@@ -26,17 +26,26 @@ const menuItems = {
 
 class App extends Component {
   state = {
-    isDarkMode: false,
+    isDarkMode:
+      localStorage.getItem('theme') !== null
+        ? localStorage.getItem('theme')
+        : false,
     save: false,
-    category: menuItems.home,
+    category:
+      localStorage.getItem('category') !== null
+        ? localStorage.getItem('category')
+        : menuItems.home,
     savedVideosList: [],
   }
 
   changeTheme = () => {
+    const {isDarkMode} = this.state
+    localStorage.setItem('theme', !isDarkMode)
     this.setState(prevState => ({isDarkMode: !prevState.isDarkMode}))
   }
 
   changeCategory = mode => {
+    localStorage.setItem('category', mode)
     this.setState({category: mode})
   }
 
@@ -54,20 +63,14 @@ class App extends Component {
     this.setState({savedVideosList: updatedList})
   }
 
-  updateTheList = videoDetails => {
-    const {save} = this.state
-    if (save) {
+  updateVideoList = videoDetails => {
+    const {savedVideosList} = this.state
+    const obj = savedVideosList.find(each => each.id === videoDetails.id)
+    if (obj === undefined) {
       this.addToSavedVideos(videoDetails)
     } else {
       this.deleteFromSavedVideos(videoDetails)
     }
-  }
-
-  updateVideoList = videoDetails => {
-    const {savedVideosList} = this.state
-    const isPresent = savedVideosList.find(each => each.id === videoDetails.id)
-    const isTrue = isPresent === undefined
-    this.setState({save: isTrue}, this.updateTheList(videoDetails))
   }
 
   render() {

@@ -4,12 +4,14 @@ import {RiMenuAddLine} from 'react-icons/ri'
 
 import ChangeThemeContext from '../../context/ChangeThemeContext'
 import CategoryContext from '../../context/CategoryContext'
+import SaveVideosContext from '../../context/SaveVideosContext'
 
 import {
   CategoryListItems,
   CategoryItem,
   CategoryText,
   Navigate,
+  SpanText,
 } from './styledComponents'
 
 const categoryConstants = {
@@ -100,9 +102,17 @@ const CategoryList = () => {
                         : unActiveColor
                     }
                   />
-                  <CategoryText isDarkMode={isDarkMode}>
-                    Saved videos
-                  </CategoryText>
+                  <SaveVideosContext.Consumer>
+                    {val => {
+                      const {savedVideosList} = val
+                      return (
+                        <CategoryText isDarkMode={isDarkMode}>
+                          Saved videos{' '}
+                          <SpanText>{savedVideosList.length}</SpanText>
+                        </CategoryText>
+                      )
+                    }}
+                  </SaveVideosContext.Consumer>
                 </CategoryItem>
               </Navigate>
             </CategoryListItems>

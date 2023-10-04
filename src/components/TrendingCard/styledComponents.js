@@ -10,6 +10,13 @@ export const TrendingVideoItem = styled.li`
     flex-direction: row;
   }
   margin-bottom: 15px;
+  transition: 0.5s;
+  :hover {
+    box-shadow: 0px 0px 14px 2px
+      ${props => (props.isDarkMode ? '#fefefe' : '#0f0f0f')};
+    transform: scaleX(1);
+    border-radius: 5px;
+  }
 `
 
 export const TrendingVideoThumbnailImg = styled.img`

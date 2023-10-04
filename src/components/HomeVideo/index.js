@@ -1,5 +1,4 @@
 import {formatDistanceToNow} from 'date-fns'
-
 import {
   HomeNavigate,
   HomeItem,
@@ -35,7 +34,7 @@ const HomeVideo = props => {
         {val => {
           const {changeCategory} = val
           return (
-            <HomeItem>
+            <HomeItem isDarkMode={isDarkMode}>
               <HomeNavigate
                 to={`/videos/${id}`}
                 onClick={() => changeCategory('INITIAL')}
